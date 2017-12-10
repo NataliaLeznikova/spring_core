@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+     http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="auditoriumService" class="ua.epam.spring.hometask.service.AuditoriumServiceImpl"/>
+
+    <bean id="bookingService" class="ua.epam.spring.hometask.service.BookingServiceImpl">
+        <constructor-arg ref = "discountService"/>
+    </bean>
+
+    <bean id="discountService" class="ua.epam.spring.hometask.service.DiscountServiceImpl">
+        <constructor-arg>
+            <list>
+                <ref bean="birthday"/>
+                <ref bean="lotsOfTickets"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="eventService" class="ua.epam.spring.hometask.service.EventServiceImpl"/>
+
+    <bean id="userService" class="ua.epam.spring.hometask.service.UserServiceImpl"/>
+
+    <bean id="birthday" class="ua.epam.spring.hometask.discountStrategies.BirthdayStrategy"/>
+
+    <bean id="lotsOfTickets" class="ua.epam.spring.hometask.discountStrategies.LotsOfTicketsStrategy"/>
+
+</beans>

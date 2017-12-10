@@ -8,6 +8,10 @@ import java.util.Objects;
  */
 public class Ticket extends DomainObject implements Comparable<Ticket> {
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     private User user;
 
     private Event event;
