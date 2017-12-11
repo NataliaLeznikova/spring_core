@@ -47,6 +47,11 @@
                 <artifactId>maven-source-plugin</artifactId>
                 <version>2.2.1</version>
                 <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>main.java.Application</mainClass>
+                        </manifest>
+                    </archive>
                     <lineLength>120</lineLength>
                     <includePom>true</includePom>
                 </configuration>

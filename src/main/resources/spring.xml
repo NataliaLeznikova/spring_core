@@ -26,6 +26,6 @@
 
     <bean id="birthday" class="ua.epam.spring.hometask.discountStrategies.BirthdayStrategy"/>
 
-    <bean id="lotsOfTickets" class="ua.epam.spring.hometask.discountStrategies.LotsOfTicketsStrategy"/>
+    <bean id="everyTenthTicket" class="ua.epam.spring.hometask.discountStrategies.EveryTenthTicketStrategy"/>
 
 </beans>

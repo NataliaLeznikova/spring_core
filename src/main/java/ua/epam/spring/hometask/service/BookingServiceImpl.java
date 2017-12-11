@@ -33,6 +33,7 @@ public class BookingServiceImpl implements BookingService {
         return ticketsCost * (1 - (discountService.getDiscount(user, event, dateTime, seats.size())/100));
     }
 
+
     @Override
     public void bookTickets(@Nonnull Set<Ticket> tickets) {
         for (Ticket ticket : tickets) {
@@ -66,7 +67,7 @@ public class BookingServiceImpl implements BookingService {
         else ticketsMap.put(ticket.getUser(), Collections.singleton(ticket));
     }
 
-    private double costByEventRating(@Nonnull Event event) {
+    public static double costByEventRating(@Nonnull Event event) {
         double cost = event.getBasePrice();
 
         switch (event.getRating()) {

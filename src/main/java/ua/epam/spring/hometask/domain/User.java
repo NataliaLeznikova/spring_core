@@ -1,5 +1,9 @@
 package ua.epam.spring.hometask.domain;
 
+import sun.util.calendar.BaseCalendar;
+
+import java.time.temporal.Temporal;
+import java.util.Date;
 import java.util.NavigableSet;
 import java.util.Objects;
 import java.util.TreeSet;
@@ -15,7 +19,14 @@ public class User extends DomainObject {
 
     private String email;
 
+    public Temporal getBirthday() {
+        return birthday;
+    }
+
+    private Temporal birthday;
+
     private NavigableSet<Ticket> tickets = new TreeSet<>();
+
 
     public String getFirstName() {
         return firstName;
@@ -89,5 +100,6 @@ public class User extends DomainObject {
         }
         return true;
     }
+
 
 }
